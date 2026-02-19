@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andor Construtora - 37 Anos Construindo o Futuro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #003d6b 0%, #00568f 100%);
+            padding: 1.5rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #d4af37;
+        }
+
+        .cta-header {
+            background: linear-gradient(135deg, #c9a961 0%, #d4af37 100%);
+            color: #003d6b;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            animation: none;
+        }
+
+        .whatsapp-float svg {
+            width: 38px;
+            height: 38px;
+            fill: white;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 5px 30px rgba(37, 211, 102, 0.8);
+                transform: scale(1.05);
+            }
+            100% {
+                box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+                transform: scale(1);
+            }
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 61, 107, 0.85) 0%, rgba(0, 86, 143, 0.85) 100%),
+                        url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920') center/cover;
+            padding: 150px 5% 100px;
+            color: white;
+            text-align: center;
+            background-attachment: fixed;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero .highlight {
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #c9a961 0%, #d4af37 100%);
+            color: #003d6b;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .experience-banner {
+            background: linear-gradient(90deg, #d4af37 0%, #c9a961 100%);
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        .experience-banner h2 {
+            color: #003d6b;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .services {
+            padding: 80px 5%;
+            background: #000000;
+        }
+
+        .services-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: #1a1a1a;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #d4af37;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #d4af37;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+
+        .portfolio {
+            padding: 80px 5%;
+            background: #000000;
+        }
+
+        .portfolio-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-highlight {
+            background: linear-gradient(135deg, #003d6b 0%, #00568f 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        .portfolio-highlight h3 {
+            color: #d4af37;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .portfolio-card {
+            background: #1a1a1a;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #003d6b 0%, #00568f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .portfolio-card-content {
+            padding: 1.5rem;
+        }
+
+        .portfolio-card h4 {
+            color: #d4af37;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-card p {
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .portfolio-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .portfolio-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .portfolio-item h4 {
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+        }
+
+        .differentials {
+            padding: 80px 5%;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            position: relative;
+        }
+
+        .differentials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #d4af37 0%, #c9a961 50%, #d4af37 100%);
+        }
+
+        .differentials-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .differentials-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .differentials-intro h2 {
+            color: #d4af37;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .differentials-intro p {
+            color: #e0e0e0;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .differentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .differential-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .differential-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, #d4af37, #c9a961, #d4af37);
+            border-radius: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .differential-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        .differential-card:hover::before {
+            opacity: 0.3;
+        }
+
+        .differential-icon-badge {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #d4af37 0%, #c9a961 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .differential-card h3 {
+            color: #d4af37;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            line-height: 1.3;
+        }
+
+        .differential-card p {
+            color: #e0e0e0;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .differential-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .differential-number {
+            font-size: 3rem;
+            color: #d4af37;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .differential-text {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #003d6b 0%, #00568f 100%);
+            padding: 80px 5%;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .footer {
+            background: #002642;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .social-links a:hover {
+            color: #d4af37;
+            transform: translateY(-3px);
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer p {
+            opacity: 0.8;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-menu {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="arquivos/logo.png" alt="Andor Construtora">
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#diferenciais">Diferenciais</a></li>
+                </ul>
+            </nav>
+            <a href="https://wa.me/554991894685?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações" class="cta-header" target="_blank">Fale Conosco</a>
+        </div>
+    </header>
+
+    <a href="https://wa.me/554991894685?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 8.138-2.125c2.362 1.288 5.013 1.975 7.862 1.975 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.25c-2.444 0-4.819-0.662-6.912-1.912l-0.512-0.3-5.288 1.375 1.4-5.2-0.337-0.537c-1.381-2.2-2.112-4.738-2.112-7.338 0-7.588 6.175-13.763 13.762-13.763s13.763 6.175 13.763 13.763-6.175 13.762-13.763 13.762zM23.225 19.588c-0.4-0.2-2.363-1.175-2.725-1.312-0.363-0.125-0.625-0.2-0.888 0.2s-1.025 1.312-1.262 1.575c-0.225 0.275-0.45 0.3-0.85 0.1s-1.662-0.613-3.163-1.95c-1.175-1.050-1.975-2.35-2.2-2.75s-0.025-0.613 0.175-0.813c0.188-0.187 0.4-0.487 0.6-0.737 0.2-0.238 0.275-0.413 0.4-0.688 0.125-0.262 0.063-0.487-0.025-0.687s-0.887-2.15-1.212-2.938c-0.325-0.775-0.663-0.662-0.888-0.675-0.225-0.013-0.487-0.013-0.75-0.013s-0.687 0.1-1.050 0.5-1.375 1.35-1.375 3.287 1.413 3.813 1.6 4.075c0.188 0.275 2.638 4.038 6.4 5.663 0.887 0.387 1.588 0.612 2.125 0.787 0.9 0.287 1.712 0.238 2.363 0.15 0.725-0.1 2.225-0.913 2.538-1.788s0.313-1.625 0.225-1.787c-0.1-0.175-0.363-0.275-0.763-0.475z"/>
+        </svg>
+    </a>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Construindo o Futuro com <span class="highlight">37 Anos de Excelência</span></h1>
+            <p>Da sua casa dos sonhos aos grandes empreendimentos corporativos. Somos referência em construção civil na região Sul do Brasil.</p>
+            <a href="https://wa.me/554991894685?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento" class="cta-button" target="_blank">Solicite seu Orçamento</a>
+        </div>
+    </section>
+
+    <div class="experience-banner">
+        <h2>37 Anos de Tradição e Inovação</h2>
+    </div>
+
+    <section class="services">
+        <div class="services-content" id="servicos">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏘️</div>
+                    <h3>Construção Residencial</h3>
+                    <p>Projetos personalizados para transformar o sonho da sua casa em realidade, com qualidade e acabamento impecável.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Obras Corporativas</h3>
+                    <p>Experiência comprovada em grandes empreendimentos comerciais e corporativos de alto padrão.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Reformas e Ampliações</h3>
+                    <p>Modernize e valorize seu imóvel com nossa expertise em reformas residenciais e comerciais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio">
+        <div class="portfolio-content" id="projetos">
+            <h2 class="section-title">Projetos de Destaque</h2>
+            <p style="text-align: center; color: #e0e0e0; max-width: 800px; margin: 0 auto 3rem;">Conheça alguns dos nossos principais projetos que demonstram nossa capacidade técnica e compromisso com a excelência.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <!-- Substitua pela URL da imagem -->
+ 			<img src="arquivos/k.png">
+                    </div>
+                    <div class="portfolio-card-content">
+                        <h4>Quadra K - Ivo Rizzo</h4>
+                        <p>Construção completa com padrão internacional de qualidade e acabamento premium.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <!-- Substitua pela URL da imagem -->
+                        <img src="arquivos/ibis2.png">
+                    </div>
+                    <div class="portfolio-card-content">
+                        <h4>Hotel Ibis - Carlos Barbosa-RS</h4>
+                        <p>Excelência em prazos e gerenciamento de obra complexa.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <!-- Substitua pela URL da imagem -->
+                        <img src="arquivos/ibis1.png">
+                    </div>
+                    <div class="portfolio-card-content">
+                        <h4>Hotel Ibis - Chapecó - SC</h4>
+                        <p>Expertise consolidada em empreendimentos hoteleiros de grande porte.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <!-- Substitua pela URL da imagem -->
+                        <img src="arquivos/4.png">
+                    </div>
+                    <div class="portfolio-card-content">
+                        <h4>Empreendimento Corporativo</h4>
+                        <p>Edifício comercial moderno com tecnologia de ponta e sustentabilidade.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <!-- Substitua pela URL da imagem -->
+                        <img src="arquivos/5.png">
+                    </div>
+                    <div class="portfolio-card-content">
+                        <h4>Residencial de Alto Padrão</h4>
+                        <p>Projeto residencial exclusivo com acabamento diferenciado e design sofisticado.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <!-- Substitua pela URL da imagem -->
+                        <img src="arquivos/6.png">
+                    </div>
+                    <div class="portfolio-card-content">
+                        <h4>Obra Industrial</h4>
+                        <p>Complexo industrial com infraestrutura completa e tecnologia avançada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="differentials">
+        <div class="differentials-content" id="diferenciais">
+            <div class="differentials-intro">
+                <h2>Por Que Escolher a Andor?</h2>
+                <p>Transformamos projetos em realidade com expertise, transparência e compromisso absoluto com resultados.</p>
+            </div>
+            
+            <div class="differentials-grid">
+                <div class="differential-card">
+                    <div class="differential-icon-badge">🏆</div>
+                    <h3>Mais de 37 anos construindo com confiança</h3>
+                    <p>Experiência comprovada em obras residenciais e empreendimentos de maior porte.</p>
+                </div>
+
+                <div class="differential-card">
+                    <div class="differential-icon-badge">⚙️</div>
+                    <h3>Você escolhe como construir</h3>
+                    <p>Empreitada ou administração, com processos claros e acompanhamento técnico do início ao fim.</p>
+                </div>
+
+                <div class="differential-card">
+                    <div class="differential-icon-badge">✓</div>
+                    <h3>Resultado que aparece na entrega</h3>
+                    <p>Qualidade na execução, controle de obra e compromisso com o que foi contratado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Pronto para iniciar seu projeto?</h2>
+        <p>Entre em contato agora e receba um orçamento personalizado</p>
+        <a href="https://wa.me/554991894685?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20iniciar%20meu%20projeto" class="cta-button" target="_blank">Falar com Especialista</a>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61577865785811&locale=pt_BR" target="_blank" title="Facebook">
+                    <div class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/andorconstrutora/" target="_blank" title="Instagram">
+                    <div class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            <p>&copy; 2025 Andor Construtora - 37 anos construindo com excelência no Sul do Brasil</p>
+        </div>
+    </footer>
+</body>
+</html>
